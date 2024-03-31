@@ -34,7 +34,8 @@ function handleSubmit(event) {
     });
   function renderImages(images) {
   gallery.innerHTML = imageTemplate(images);
-  searchInput.reset();
-};
+  };
+  searchInput.value = '';
+
 }
 
