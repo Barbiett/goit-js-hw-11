@@ -32,8 +32,9 @@ function handleSubmit(event) {
     .finally(() => {
       loader.classList.add('is-hidden');
     });
-}
-function renderImages(images) {
+  function renderImages(images) {
   gallery.innerHTML = imageTemplate(images);
-  searchForm.reset();
+  searchInput.reset();
 };
+}
+
