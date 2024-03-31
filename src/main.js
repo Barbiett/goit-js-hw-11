@@ -24,6 +24,7 @@ function handleSubmit(event) {
         });
         return;
       }
+      gallery.innerHTML = '';
       imageTemplate(data.hits);
     })
     .catch(error => {
