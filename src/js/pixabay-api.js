@@ -5,7 +5,7 @@ export function getPhoto(value) {
         q: value,
         image_type: 'photo',
         orientation: 'horizontal',
-        safesearch: false,
+        safesearch: true,
     });
     const bazeUrl = 'https://pixabay.com/api/';
     const url = `${bazeUrl}?${params}`;

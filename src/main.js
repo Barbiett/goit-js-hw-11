@@ -22,6 +22,7 @@ function handleSubmit(event) {
           color: 'red',
           position: 'topRight',
         });
+        gallery.innerHTML = '';
         return;
       }
       gallery.innerHTML = '';
@@ -29,14 +30,16 @@ function handleSubmit(event) {
     })
     .catch(error => {
       console.error('Error fetching data:', error);
+      gallery.innerHTML = '';
     })
     .finally(() => {
       loader.classList.add('is-hidden');
     });
-  function renderImages(images) {
-  gallery.innerHTML = imageTemplate(images);
-  };
   searchInput.value = '';
-
 }
+function renderImages(images) {
+  gallery.innerHTML = imageTemplate(images);
+};
+
+// console.log("b" + "a" + +"a" + "a");
 
