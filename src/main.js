@@ -5,7 +5,7 @@ import { imageTemplate } from './js/render-functions.js';
 const searchForm = document.getElementById('search-form');
 const searchInput = document.getElementById('search-input');
 const gallery = document.querySelector('.gallery');
-const loader = document.querySelector('.loader');
+const load = document.querySelector('.loading');
 searchForm.addEventListener('submit', handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
@@ -13,7 +13,7 @@ function handleSubmit(event) {
   if (query === '') {
      return iziToast.warning({message: "Please try again! Write something.", position: "topRight", color: "red"})
   }
-  loader.classList.remove('is-hidden');
+ load.classList.add('loader');
   getPhoto(query)
     .then(data => {
       if (data.hits.length === 0) {
@@ -33,13 +33,8 @@ function handleSubmit(event) {
       gallery.innerHTML = '';
     })
     .finally(() => {
-      loader.classList.add('is-hidden');
+      load.classList.remove('loader')
     });
   searchInput.value = '';
 }
-function renderImages(images) {
-  gallery.innerHTML = imageTemplate(images);
-};
-
-// console.log("b" + "a" + +"a" + "a");
 
